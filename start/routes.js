@@ -19,4 +19,5 @@ const Route = use('Route')
 // permite la respuesta desde api/v1/usuarios/registro
 Route.group(() => {
   Route.post('usuarios/registro', 'UserController.store');
+  Route.post('usuarios/login', 'UserController.login');
 }).prefix('api/v1/');
