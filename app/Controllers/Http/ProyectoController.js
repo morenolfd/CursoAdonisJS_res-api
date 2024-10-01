@@ -3,8 +3,8 @@
 class ProyectoController {
     async index({ auth }) {
         const user = await auth.getUser();
-        console.log(user);
-        return { mensaje: "estamos en proyectoController.index" }
+        console.log(user.id);
+        return await user.proyectos().fetch();
     }
 }
 
