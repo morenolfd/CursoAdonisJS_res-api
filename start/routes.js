@@ -22,6 +22,7 @@ Route.group(() => {
   Route.post('usuarios/login', 'UserController.login'); 
   Route.get('proyectos','ProyectoController.index').middleware('auth'); //middleware
   Route.post('proyectos','ProyectoController.create').middleware('auth'); //middleware
+  Route.delete('proyectos/:id','ProyectoController.destroy').middleware('auth'); //middleware
 }).prefix('api/v1/');
 /*
   Un middleware es una función que se ejecuta antes de que se procese la lógica de la ruta. 
