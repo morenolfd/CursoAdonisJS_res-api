@@ -20,5 +20,12 @@ const Route = use('Route')
 Route.group(() => {
   Route.post('usuarios/registro', 'UserController.store');
   Route.post('usuarios/login', 'UserController.login');
-  Route.get('proyectos','ProyectoController.index');
+  Route.get('proyectos','ProyectoController.index').middleware('auth'); //middleware
 }).prefix('api/v1/');
+/*
+  Un middleware es una función que se ejecuta antes de que se procese la lógica de la ruta. 
+  En este caso, auth es un middleware que verifica si la solicitud contiene un token JWT 
+  válido y si ese token corresponde a un usuario existente en la base de datos. Si el token 
+  no es válido o no está presente, el middleware bloqueará el acceso a la ruta y retornará 
+  un error de autenticación.
+*/
