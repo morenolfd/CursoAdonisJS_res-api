@@ -2,6 +2,7 @@
 
 const Proyecto = use('App/Models/Proyecto');
 const User = use('App/Models/User')
+const AutorizacionService = use ('App/Services/AutorizacionService');
 
 class ProyectoController {
     async index({ auth }) {
@@ -21,15 +22,11 @@ class ProyectoController {
         return proyecto //devuelve al usuario el proyecto
     }
 
-    async destroy({ auth, response, params}){
+    async destroy({ auth, params}){
         const user = await auth.getUser();
         const { id } = params;
         const proyecto = await Proyecto.find(id);
-        if(proyecto.user_id !== user.id){
-            return response.status(403).json({
-                mensaje: "No puedes eliminar un proyecto del cual no eres dueño"
-            });
-        }
+        AutorizacionService.verificarPermiso(proyecto,user);
         await proyecto.delete();
         return proyecto;
     }
