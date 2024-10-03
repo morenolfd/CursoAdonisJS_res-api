@@ -4,7 +4,7 @@ Un curso de Marcos Guerrini en Udemy
 
 # Links del curso
 https://www.udemy.com/course/curso-crea-una-rest-api-desde-cero-con-nodejs-y-adonisjs/
-https://github.com/programacionparaaprender/adonis-rest-api
+https://github.com/academiacoder/adonis-rest-api
 
 # Descripción
 En este curso aprenderás desde las bases que son los servicios REST y entenderás perfectamente para que pueden utilizarse y como crearlos y al finalizar el mismo serás capaz de crear tus propias REST APIs utilizando uno de los frameworks mas veloces y potentes de NodeJS.
