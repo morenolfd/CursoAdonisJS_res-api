@@ -21,6 +21,6 @@ Aprenderás a realizar relaciones entre modelos de una manera muy simple
 Aprenderás a crear REST API extremadamente veloces ya que AdonisJS es uno de los Frameworks de NodeJS más veloces
 
 # Cursado en ...
-Cursado en eptiembre de 2024 por David Moreno
+Cursado de septiembre a octubre de 2024 por David Moreno
 
 
