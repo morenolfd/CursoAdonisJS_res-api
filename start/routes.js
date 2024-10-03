@@ -20,9 +20,15 @@ const Route = use('Route')
 Route.group(() => {
   Route.post('usuarios/registro', 'UserController.store');
   Route.post('usuarios/login', 'UserController.login'); 
+
+  // Rutas de los proyectos
   Route.get('proyectos','ProyectoController.index').middleware('auth'); //middleware
   Route.post('proyectos','ProyectoController.create').middleware('auth'); //middleware
   Route.delete('proyectos/:id','ProyectoController.destroy').middleware('auth'); //middleware
+  Route.patch('proyectos/:id','ProyectoController.update').middleware('auth'); //middleware
+
+  // Rutas de las tareas
+  Route.post('proyectos/:id/tareas','TareaController.create').middleware('auth'); //middleware
 }).prefix('api/v1/');
 /*
   Un middleware es una función que se ejecuta antes de que se procese la lógica de la ruta. 
