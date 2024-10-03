@@ -28,7 +28,10 @@ Route.group(() => {
   Route.patch('proyectos/:id','ProyectoController.update').middleware('auth'); //middleware
 
   // Rutas de las tareas
-  Route.get('proyectos/:id/tareas','TareaController.create').middleware('auth'); //middleware
+  Route.get('proyectos/:id/tareas','TareaController.index').middleware('auth'); //middleware
+  Route.post('proyectos/:id/tareas','TareaController.create').middleware('auth'); //middleware
+  Route.patch('tareas/:id','TareaController.update').middleware('auth'); //middleware
+  Route.delete('tareas/:id','TareaController.destroy').middleware('auth'); //middleware
 }).prefix('api/v1/');
 /*
   Un middleware es una función que se ejecuta antes de que se procese la lógica de la ruta. 
